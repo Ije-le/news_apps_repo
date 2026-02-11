@@ -44,6 +44,7 @@ Then run datasette serve extend.db so that you can browse the data. What do you 
 
 Try faceting on different columns. The goal is to find something interesting and then describe in this file what information would be most useful and how you might organize it. In other words, draft a basic proposal for an app that accomplishes one or more tasks for its users, the potential features it would have (including visuals). You don't have to *build* those things, just describe them, and use examples of what a user might do. The more specific the better. If you find a particular view of the data useful, describe that (you should include the URL from your codespace). If there are things you would do with this data that requires additional information or data, tell me about that, too. Put that in the space below.
 
+#### ADMISSIONS APP IDEAS
 ## Notes
 The pins represent the data on the table: the number of students who applied and were admitted from various high schools over a period of time. This data can look different on the map if rearranged (top to bottom, filter).
 When you click on the pin, it breaks down into sub-clusters, until it can show individual points for all the data included in the table below.
@@ -52,10 +53,11 @@ I faceted by school and chose to look at Aberdeen High School. I filtered to get
 
 Over the ten-year period under review, only less than 10 Kenwood High students got admitted. In some cases, there were no applicants for the school at all. Link here: https://musical-waddle-97qp9qwwvpgr27x7j-8001.app.github.dev/extend/admissions?_sort=rowid&_facet=school&_facet_size=max&school=Kenwood+High
 
-
-#### ADMISSIONS APP IDEAS
+# Main idea
 Using this dataset, one idea would be an app that pulls up acceptance rates for high schools in counties over a period of time. This could be useful for parents looking to make enrollement decision for their kids or wards, or guide them through the process.
-The app would take the form of a search bar, with easy to recognize symbols so that users can navigate easily even when on autopilot.
+The app would take the form of a search bar that links to other pages, with easy to recognize symbols so that users can navigate without thinking too much.
+When a user searches for a school and hit enter they are redirected to a different page with relevant information aboout the school: year, number of applicants, admitted students and enrollment rate.
+I think that it might work best if the app has a drop down option, so that users have the option to look through all available schools, which will be particularly helpful if they are not looking for specific schools. But if there are hundreds or thousands of schools I'm not sure how that will work.
 
 ### Full-Text Search
 
@@ -70,3 +72,6 @@ Then scroll down to the releases table and pick "title" and "body" and then hit 
 Now let's do some searching across those tables and let's discuss how full-text search is different from filtering.
 
 When we're done, let's check on our geocoder progress.
+
+# Notes
+I searched "public transportation" and the tables reduced from 7,661 rows to 131, just like a filter would. I think the difference is that not all the rows had public transportation fully spelled out in their content. Some had only transportation, some had public. I think the difference between filter and full text search is that filter gives you the exact words you are looking out for, while full text search pull up a wider range of results as long as they are connected to what you are searching for. Also, filter only lets you search for words in single columns at a time. Full search returns information from any part of the database.
